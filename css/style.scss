@@ -1,0 +1,28 @@
+.header__icons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__contact{
+    display: flex;
+}
+
+.header__title{
+    text-align: center;
+}
+
+.container{
+
+}
+
+.container__image{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container__outcome{
+    display: flex;
+    justify-content: space-around;
+}
