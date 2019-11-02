@@ -1,6 +1,35 @@
+$Staatliches: 'Staatliches', cursive;
+$Roboto: 'Roboto Condensed', sans-serif;
+
+$blue: #00AFC4;
+$white: #ffffff;
+$black: #363535;
+$grey: #757575;
+$orange: #f16d5e;
+
+
+
+.header{
+    font-family: $Staatliches;
+    background-color: $blue;
+    height: 100%;
+    padding-bottom: 4vh;
+}
+
 .header__icons{
     display: flex;
     justify-content: space-between;
+}
+
+.header__img,
+.footer__img{
+    text-decoration: none;
+    color: $orange;
+}
+
+.header__img i:hover,
+.footer__img i:hover{
+    transform: translateY(5px);
 }
 
 .header__contact{
@@ -8,21 +37,106 @@
 }
 
 .header__title{
+    color: $black;
     text-align: center;
+    vertical-align: middle;
+}
+
+.header__contact--icon{
+    margin: 3vh 1vh;
 }
 
 .container{
-
+    height: 100%;
+    background-color: $white;
+    font-family: $Roboto;
 }
 
 .container__image{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
 }
 
+.container__image1,
+.container__image2,
+.container__image3{
+    margin: 2vh;
+    color: $black;
+    cursor: pointer;
+}
+
+.container__image1 i:hover,
+.container__image2 i:hover,
+.container__image3 i:hover{
+    transform: scale(1.1);
+}
+
 .container__outcome{
+    font-size: 6vh;
+}
+
+.container__players{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+}
+
+.container__player--person{
+    margin: 0;
+}
+
+.container__player--ai{
+    margin: 0;
+}
+
+.container__points--dots{
+    margin: 1vh 0;
+}
+
+.container__points--player{
+    margin: 1vh 3vh;
+}
+
+.container__points{
+    display: flex;
+    justify-content: center;
+}
+
+.container__comment{
+    padding: 1vh;
+    margin: 1vh;
+    background-color: $grey;
+}
+
+.container__comment--bar,
+.container__comment--comment{
+    margin: 0.5vh 0;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    background-color: $blue;
+    height: 10vh;
+    margin-top: 1vh;
+}
+
+.footer__title{
+    text-align: center;
+    vertical-align: middle;
+    font-family: $Roboto;
+    font-size: 2vh;
+    color: $black;
+    margin: auto 1vh;
+}
+
+.footer__contact{
+    display: flex;
+    align-items: center;
+}
+
+.footer__contact--icon{
+    margin: 0 1vh;
 }

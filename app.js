@@ -3,10 +3,10 @@ document.addEventListener("DOMContentLoaded", function(){
     const rock = document.querySelector(".container__image2");
     const scissors = document.querySelector(".container__image3");
 
-    const Ainumber = document.querySelector(".container__opponent--number");
-    const PlayerNumber = document.querySelector(".container__player--number");
+    const Ainumber = document.querySelector(".container__points--person");
+    const PlayerNumber = document.querySelector(".container__points--ai");
 
-    const placeMessage = document.querySelector("container__opponentPlayer");
+    const mainBox = document.querySelector(".container");
 
     let AiPoints = 0;
     let PlayerPoints = 0;
@@ -33,25 +33,24 @@ document.addEventListener("DOMContentLoaded", function(){
 
     randomHand();
 
-    function gameComment(){
-        //tu ma być wyświetlany komunikat
-        }
-
-
-
     const gameOptions = {
         win: function(){
             PlayerPoints += 1
-            gameComment();
+            gameComment("wygrałeś!");
             PlayerNumber.innerHTML = PlayerPoints;
+            gameEnd(AiPoints, PlayerPoints);
             console.log("wygrales", PlayerPoints);
         },
         lose: function(){
             AiPoints += 1;
+            gameComment("przegrałeś!");
             Ainumber.innerHTML = AiPoints;
+            gameEnd(AiPoints, PlayerPoints);
             console.log("przegrałeś", AiPoints);
         },
         draw: function(){
+            gameComment("remis!");
+            gameEnd(AiPoints, PlayerPoints);
             console.log("remis");
         }
     }
@@ -77,4 +76,41 @@ document.addEventListener("DOMContentLoaded", function(){
                 break;
        }
     }
+
+    function gameEnd(outcomeAi, outcomePlayer){
+        if(outcomeAi >= 5){
+            alert("komputer wygrał")
+        }
+        else if(outcomePlayer >= 5){
+            alert("gracz wygrał");
+        }
+        else{
+            console.log("do nothing");
+        }
+    }
+
+    function gameComment(comment){
+        const game = document.createElement("div");
+        game.classList.add("container__comment");
+
+        const gameBar = document.createElement("div");
+        gameBar.classList.add("container__comment--bar")
+
+        const gameDate = document.createElement("div");
+        gameDate.classList.add("container__todoBar--clock");
+        const date = new Date();
+        const dateText = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear() + " godz.:" + date.getHours() + ":" + date.getMinutes();
+        gameDate.innerHTML = dateText;
+
+        gameBar.appendChild(gameDate);
+
+        const gameComment = document.createElement("div");
+        gameComment.classList.add("container__comment--comment");
+        gameComment.innerHTML = comment;
+
+        game.appendChild(gameBar);
+        game.appendChild(gameComment);
+
+        mainBox.append(game);
+        }
 })

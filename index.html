@@ -9,20 +9,26 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
 
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Staatliches&display=swap" rel="stylesheet">
+
     <script src="https://kit.fontawesome.com/7dc6cd2a2b.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="header">
         <div class="header__icons">
             <div class="header__contact">
-                <div class="header__contact--linkedin">
-                    <i class="fab fa-linkedin fa-3x"></i>
+                <div class="header__contact--icon header__contact--linkedin">
+                    <a class="header__img" target="_blank" href="#">
+                        <i class="fab fa-linkedin fa-3x"></i>
+                    </a>
                 </div>
-                <div class="header__contact--github">
-                    <i class="fab fa-github-square fa-3x"></i>
+                <div class="header__contact--icon header__contact--github">
+                    <a class="header__img" target="_blank" href="#">
+                        <i class="fab fa-github-square fa-3x"></i>
+                    </a>
                 </div>
             </div>
-            <div class="header__lightmode">
+            <div class="header__contact--icon header__lightmode">
                     <a class="header__img" target ="_blank" href="#">
                         <i class="fas fa-sun fa-3x"></i>
         <!--                 <i class="fas fa-moon"></i> -->
@@ -46,21 +52,18 @@
             </div>
         </section>
         <section class="container__outcome">
-            <div class="container__opponent">
-                <p class="container__opponent--title">
-                    Przeciwnik
+            <div class="container__players">
+                <p class="container__player--title container__player--ai">
+                    AI
                 </p>
-                <p class="container__opponent--number">
-                    0
-                </p>
-            </div>
-            <p class="container__dots">:</p>
-            <div class="container__player">
-                <p class="container__player--title">
+                <p class="container__player--title container__player--person">
                     Gracz
                 </p>
-                <p class="container__player--number">0</p>
-                </div>
+            </div>
+            <div class="container__points">
+                <p class="container__points--player container__points--ai"> 0 </p>
+                <p class="container__points--dots"> : </p>
+                <p class="container__points--player container__points--person"> 0 </p>
             </div>
         </section>
     </div>
@@ -69,8 +72,16 @@
             <p>created by: InzynierNierobstwa</p>
         </div>
         <div class="footer__contact">
-            <img class="footer__contact--linkedin">
-            <img class="footer__contact--github">
+            <div class="footer__contact--icon footer__contact--linkedin">
+                <a class="footer__img" target="_blank" href="#">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+            </div>
+            <div class="footer__contact--icon footer__contact--github">
+                <a class="footer__img" target="_blank" href="#">
+                    <i class="fab fa-github-square fa-2x"></i>
+                </a>
+            </div>
         </div>
     </footer>
     <script src="app.js"></script>
