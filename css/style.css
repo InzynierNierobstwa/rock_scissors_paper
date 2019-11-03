@@ -14,10 +14,12 @@
           justify-content: space-between;
 }
 
-.header__img,
-.footer__img {
+.header__img i,
+.footer__img i {
   text-decoration: none;
   color: #f16d5e;
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
 }
 
 .header__img i:hover,
@@ -43,9 +45,63 @@
 }
 
 .container {
-  height: 100%;
   background-color: #ffffff;
   font-family: "Roboto Condensed", sans-serif;
+  position: relative;
+}
+
+.container__loseGame {
+  position: absolute;
+  background-color: #00AFC4;
+  width: 50vh;
+  height: auto;
+  opacity: 0.9;
+  top: 10vh;
+  left: 3vh;
+  z-index: 1;
+}
+
+.container__loseGame--comment {
+  font-size: 4vh;
+  text-align: center;
+}
+
+.container__loseGame--button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin: 5vh;
+}
+
+.container__button--outcomes,
+.container__button--restart {
+  margin: auto;
+  font-size: 3.5vh;
+  color: #363535;
+  background-color: #f16d5e;
+  border: 2px solid #363535;
+  cursor: pointer;
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
+}
+
+.container__button--outcomes a,
+.container__button--restart a {
+  text-decoration: none;
+}
+
+.container__button--outcomes a:visited,
+.container__button--restart a:visited {
+  color: inherit;
+}
+
+.container__button--outcomes:hover,
+.container__button--restart:hover {
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
 }
 
 .container__image {
@@ -65,12 +121,14 @@
           align-items: center;
 }
 
-.container__image1,
-.container__image2,
-.container__image3 {
+.container__image1 i,
+.container__image2 i,
+.container__image3 i {
   margin: 2vh;
   color: #363535;
   cursor: pointer;
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
 }
 
 .container__image1 i:hover,
@@ -93,10 +151,7 @@
           justify-content: center;
 }
 
-.container__player--person {
-  margin: 0;
-}
-
+.container__player--player,
 .container__player--ai {
   margin: 0;
 }
@@ -137,8 +192,8 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   background-color: #00AFC4;
-  height: 10vh;
   margin-top: 1vh;
+  height: 10vh;
 }
 
 .footer__title {

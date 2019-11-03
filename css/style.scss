@@ -21,10 +21,11 @@ $orange: #f16d5e;
     justify-content: space-between;
 }
 
-.header__img,
-.footer__img{
+.header__img i,
+.footer__img i{
     text-decoration: none;
     color: $orange;
+    transition: all 400ms ease;
 }
 
 .header__img i:hover,
@@ -47,9 +48,58 @@ $orange: #f16d5e;
 }
 
 .container{
-    height: 100%;
     background-color: $white;
     font-family: $Roboto;
+    position: relative;
+}
+
+.container__loseGame{
+    position: absolute;
+    background-color: $blue;
+    width: 50vh;
+    height: auto;
+    opacity: 0.9;
+
+    top: 10vh;
+    left: 3vh;
+    z-index: 1;//zmiana w app.js
+}
+
+.container__loseGame--comment{
+    font-size: 4vh;
+    text-align: center;
+}
+
+.container__loseGame--button{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 5vh;
+}
+
+.container__button--outcomes,
+.container__button--restart{
+    margin: auto;
+    font-size: 3.5vh;
+    color: $black;
+    background-color: $orange;
+    border: 2px solid $black;
+    cursor: pointer;
+    transition: all 400ms ease;
+}
+
+.container__button--outcomes a,
+.container__button--restart a{
+    text-decoration: none;
+}
+
+.container__button--outcomes a:visited,
+.container__button--restart a:visited{
+    color: inherit;
+}
+
+.container__button--outcomes:hover,
+.container__button--restart:hover{
+    transform: translateY(5px);
 }
 
 .container__image{
@@ -60,12 +110,13 @@ $orange: #f16d5e;
     align-items: center;
 }
 
-.container__image1,
-.container__image2,
-.container__image3{
+.container__image1 i,
+.container__image2 i,
+.container__image3 i{
     margin: 2vh;
     color: $black;
     cursor: pointer;
+    transition: all 400ms ease;
 }
 
 .container__image1 i:hover,
@@ -83,10 +134,7 @@ $orange: #f16d5e;
     justify-content: center;
 }
 
-.container__player--person{
-    margin: 0;
-}
-
+.container__player--player,
 .container__player--ai{
     margin: 0;
 }
@@ -119,8 +167,8 @@ $orange: #f16d5e;
     display: flex;
     justify-content: space-between;
     background-color: $blue;
-    height: 10vh;
     margin-top: 1vh;
+    height: 10vh;
 }
 
 .footer__title{

@@ -3,10 +3,18 @@ document.addEventListener("DOMContentLoaded", function(){
     const rock = document.querySelector(".container__image2");
     const scissors = document.querySelector(".container__image3");
 
-    const Ainumber = document.querySelector(".container__points--person");
+    const Ainumber = document.querySelector(".container__points--player");
     const PlayerNumber = document.querySelector(".container__points--ai");
 
     const mainBox = document.querySelector(".container");
+
+    const gameBox = document.querySelector(".container__loseGame");
+    const gameDescription = document.querySelector(".container__loseGame--comment span");
+
+    const btnOutcome = document.querySelector(".container__button--outcomes");
+    const btnRestart = document.querySelector(".container__button--restart");
+
+    const listItem = document.getElementsByClassName("container__comment");
 
     let AiPoints = 0;
     let PlayerPoints = 0;
@@ -23,6 +31,14 @@ document.addEventListener("DOMContentLoaded", function(){
     scissors.addEventListener("click", function(){
         console.log("nozyczki");
         gameRule("s");
+    })
+
+    btnRestart.addEventListener("click", function(){
+        gameOptions.reset();
+        console.log("gra zrestartowana");
+        while(listItem[0]){
+            listItem[0].remove();
+        }
     })
 
     function randomHand(){
@@ -52,6 +68,12 @@ document.addEventListener("DOMContentLoaded", function(){
             gameComment("remis!");
             gameEnd(AiPoints, PlayerPoints);
             console.log("remis");
+        },
+        reset: function(){
+            AiPoints = 0;
+            PlayerPoints = 0;
+            PlayerNumber.innerHTML = PlayerPoints;  
+            Ainumber.innerHTML = AiPoints;
         }
     }
 
@@ -79,10 +101,12 @@ document.addEventListener("DOMContentLoaded", function(){
 
     function gameEnd(outcomeAi, outcomePlayer){
         if(outcomeAi >= 5){
-            alert("komputer wygrał")
+            gameDescription.innerHTML = "wygrał";
+            gameBox.style.zIndex = "1";
         }
         else if(outcomePlayer >= 5){
-            alert("gracz wygrał");
+            gameDescription.innerHTML = "przegrał";
+            gameBox.style.zIndex = "1";
         }
         else{
             console.log("do nothing");
@@ -113,4 +137,5 @@ document.addEventListener("DOMContentLoaded", function(){
 
         mainBox.append(game);
         }
+
 })
