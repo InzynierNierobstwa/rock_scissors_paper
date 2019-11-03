@@ -53,12 +53,12 @@
 .container__loseGame {
   position: absolute;
   background-color: #00AFC4;
-  width: 50vh;
+  width: 40vh;
   height: auto;
   opacity: 0.9;
   top: 10vh;
-  left: 3vh;
-  z-index: 1;
+  left: calc(50% - 20vh);
+  z-index: -1;
 }
 
 .container__loseGame--comment {

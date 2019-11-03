@@ -41,6 +41,10 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     })
 
+    btnOutcome.addEventListener("click", function(){
+        scrollTo(document.getElementById("anchor"));
+    })
+
     function randomHand(){
         const rand = Math.floor(Math.random() * 3);
         const arrayRandom = ["p", "r", "s"];
@@ -74,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function(){
             PlayerPoints = 0;
             PlayerNumber.innerHTML = PlayerPoints;  
             Ainumber.innerHTML = AiPoints;
+            gameBox.style.zIndex = "-1";
         }
     }
 
@@ -138,4 +143,11 @@ document.addEventListener("DOMContentLoaded", function(){
         mainBox.append(game);
         }
 
+        function scrollTo(element) {
+            window.scroll({
+              behavior: 'smooth',
+              left: 0,
+              top: element.offsetTop
+            });
+        }
 })

@@ -56,13 +56,13 @@ $orange: #f16d5e;
 .container__loseGame{
     position: absolute;
     background-color: $blue;
-    width: 50vh;
+    width: 40vh;
     height: auto;
     opacity: 0.9;
 
     top: 10vh;
-    left: 3vh;
-    z-index: 1;//zmiana w app.js
+    left: calc(50% - 20vh);
+    z-index: -1;//zmiana w app.js
 }
 
 .container__loseGame--comment{
