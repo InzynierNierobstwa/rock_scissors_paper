@@ -65,6 +65,28 @@ $orange: #f16d5e;
     z-index: -1;//zmiana w app.js
 }
 
+.pop-up{
+    top: -400px;
+    animation: drop 1s ease forwards;
+}
+
+
+@keyframes drop{
+    0% {opacity: 0};
+    70% {transform: translateY(600px)};
+    100% {transform: translateY(500px); opacity: 1;};
+}
+
+.pop-down{
+    animation: up 1s ease forwards; 
+}
+
+@keyframes up{
+    0% {opacity: 1};
+    99%{transform: translateY(600px)};
+    100% {z-index: -1;  opacity: 0};
+}
+
 .container__loseGame--comment{
     font-size: 4vh;
     text-align: center;

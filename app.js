@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function(){
         while(listItem[0]){
             listItem[0].remove();
         }
+        popDownBox.popDown(gameBox);
     })
 
     btnOutcome.addEventListener("click", function(){
@@ -78,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function(){
             PlayerPoints = 0;
             PlayerNumber.innerHTML = PlayerPoints;  
             Ainumber.innerHTML = AiPoints;
-            gameBox.style.zIndex = "-1";
+/*             gameBox.style.zIndex = "-1"; */
         }
     }
 
@@ -107,11 +108,11 @@ document.addEventListener("DOMContentLoaded", function(){
     function gameEnd(outcomeAi, outcomePlayer){
         if(outcomeAi >= 5){
             gameDescription.innerHTML = "wygrał";
-            gameBox.style.zIndex = "1";
+            popDownBox.popUp(gameBox);
         }
         else if(outcomePlayer >= 5){
             gameDescription.innerHTML = "przegrał";
-            gameBox.style.zIndex = "1";
+            popDownBox.popUp(gameBox);
         }
         else{
             console.log("do nothing");
@@ -150,4 +151,30 @@ document.addEventListener("DOMContentLoaded", function(){
               top: element.offsetTop
             });
         }
+
+        const popDownBox = {
+            popUp: function(element){
+                if(element.classList.contains("pop-down")){
+                    element.classList.remove("pop-down");
+                    element.classList.add("pop-up");
+                    element.style.zIndex = "1";
+                }
+                else{
+                    element.classList.add("pop-up");
+                    element.style.zIndex = "1";
+                }
+            },
+            popDown: function(element){
+                if(element.classList.contains("pop-up")){
+                    element.classList.remove("pop-up");
+                    element.classList.remove("pop-up");
+                    element.classList.add("pop-down"); 
+                }
+                else{
+                    element.classList.remove("pop-up");
+                    element.classList.add("pop-down");
+                }
+            }
+        }
+
 })

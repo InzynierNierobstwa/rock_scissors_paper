@@ -61,6 +61,75 @@
   z-index: -1;
 }
 
+.pop-up {
+  top: -400px;
+  -webkit-animation: drop 1s ease forwards;
+          animation: drop 1s ease forwards;
+}
+
+@-webkit-keyframes drop {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    -webkit-transform: translateY(600px);
+            transform: translateY(600px);
+  }
+  100% {
+    -webkit-transform: translateY(500px);
+            transform: translateY(500px);
+    opacity: 1;
+  }
+}
+
+@keyframes drop {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    -webkit-transform: translateY(600px);
+            transform: translateY(600px);
+  }
+  100% {
+    -webkit-transform: translateY(500px);
+            transform: translateY(500px);
+    opacity: 1;
+  }
+}
+
+.pop-down {
+  -webkit-animation: up 1s ease forwards;
+          animation: up 1s ease forwards;
+}
+
+@-webkit-keyframes up {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    -webkit-transform: translateY(600px);
+            transform: translateY(600px);
+  }
+  100% {
+    z-index: -1;
+    opacity: 0;
+  }
+}
+
+@keyframes up {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    -webkit-transform: translateY(600px);
+            transform: translateY(600px);
+  }
+  100% {
+    z-index: -1;
+    opacity: 0;
+  }
+}
+
 .container__loseGame--comment {
   font-size: 4vh;
   text-align: center;
