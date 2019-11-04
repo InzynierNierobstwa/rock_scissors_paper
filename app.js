@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     const btnOutcome = document.querySelector(".container__button--outcomes");
     const btnRestart = document.querySelector(".container__button--restart");
+    const btnNightDay = document.querySelector(".header__lightmode");
 
     const listItem = document.getElementsByClassName("container__comment");
 
@@ -47,6 +48,45 @@ document.addEventListener("DOMContentLoaded", function(){
 
     btnOutcome.addEventListener("click", function(){
         scrollTo(document.getElementById("anchor"));
+    })
+
+/*     const colorChange = {
+        dayMode: function(){
+            document.querySelector(".header").style.backgroundColor = "#00AFC4";
+            document.querySelector(".header__title").style.color = "#f16d5e";
+            document.querySelector(".footer").style.backgroundColor = "#00AFC4";
+            document.querySelector(".footer__title").style.color = "#363535";
+            document.querySelector(".container").style.backgroundColor = "#fff";
+            document.querySelector(".container__loseGame").style.backgroundColor = "#00AFC4";
+            document.querySelector(".container__loseGame").style.color = "#363535";
+
+            const btnMode = document.getElementsByClassName(".fa-moon");
+            if(btnMode.classList.contains("fa-moon")){
+                btnMode.classList.remove("fa-moon");
+                btnMode.classList.add("fa-sun");
+            }
+        },
+        nigthMode: function(){
+            document.querySelector(".header").style.backgroundColor = "#2C2C2C";
+            document.querySelector(".header__title").style.color = "#f16d5e";
+            document.querySelector(".footer").style.backgroundColor = "#2C2C2C";
+            document.querySelector(".footer__title").style.color = "#f16d5e";
+            document.querySelector(".container").style.backgroundColor = "#757575";
+            document.querySelector(".container__loseGame").style.backgroundColor = "#2C2C2C";
+            document.querySelector(".container__loseGame").style.color = "#f16d5e";
+
+            
+            let btnMode = document.querySelector(".fa-sun");
+            if(btnMode.classList.contains("fa-sun")){
+                btnMode.classList.remove("fa-sun");
+                btnMode.classList.add("fa-moon");
+            }
+        }
+    } DO PRZEMYŚLENIA*/
+
+    btnNightDay.addEventListener("click", function(e){
+        e.preventDefault();
+        colorChange.nigthMode();
     })
 
     function randomHand(){
@@ -119,7 +159,6 @@ document.addEventListener("DOMContentLoaded", function(){
             }
         } 
     }
-
 
     function gameEnd(outcomeAi, outcomePlayer){
         if(outcomeAi >= 5){
@@ -194,5 +233,4 @@ document.addEventListener("DOMContentLoaded", function(){
                 }
             }
         }
-
 })

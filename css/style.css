@@ -44,6 +44,20 @@
   margin: 3vh 1vh;
 }
 
+.header__img {
+  border: none;
+  background: none;
+}
+
+.header__img:active {
+  outline: none;
+  border: none;
+}
+
+.header__img:focus {
+  outline: none;
+}
+
 .container {
   background-color: #ffffff;
   font-family: "Roboto Condensed", sans-serif;
@@ -292,7 +306,7 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   background-color: #00AFC4;
-  margin-top: 1vh;
+  /*     margin-top: 1vh; */
   height: 10vh;
 }
 
@@ -317,4 +331,18 @@
 .footer__contact--icon {
   margin: 0 1vh;
 }
+
+/* #headerFooter--night{
+    background-color: $greyNight;
+    color: $orange;
+}
+
+#container--night{
+    background-color: $grey;
+    color: $white
+}
+
+#container__image--night{
+    color: $white;
+} */
 /*# sourceMappingURL=style.css.map */

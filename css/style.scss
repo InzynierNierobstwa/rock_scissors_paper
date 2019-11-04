@@ -5,6 +5,7 @@ $blue: #00AFC4;
 $white: #ffffff;
 $black: #363535;
 $grey: #757575;
+$greyNight: #2C2C2C;
 $orange: #f16d5e;
 
 
@@ -45,6 +46,20 @@ $orange: #f16d5e;
 
 .header__contact--icon{
     margin: 3vh 1vh;
+}
+
+.header__img{
+    border: none;
+    background: none;
+}
+
+.header__img:active{
+    outline: none;
+    border: none;
+}
+
+.header__img:focus{
+    outline: none;
 }
 
 .container{
@@ -215,7 +230,7 @@ $orange: #f16d5e;
     display: flex;
     justify-content: space-between;
     background-color: $blue;
-    margin-top: 1vh;
+/*     margin-top: 1vh; */
     height: 10vh;
 }
 
@@ -236,3 +251,18 @@ $orange: #f16d5e;
 .footer__contact--icon{
     margin: 0 1vh;
 }
+
+//nightMode
+/* #headerFooter--night{
+    background-color: $greyNight;
+    color: $orange;
+}
+
+#container--night{
+    background-color: $grey;
+    color: $white
+}
+
+#container__image--night{
+    color: $white;
+} */
