@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function(){
     const rock = document.querySelector(".container__image2");
     const scissors = document.querySelector(".container__image3");
 
+    const allImage = document.querySelectorAll(".container__image");
+
     const Ainumber = document.querySelector(".container__points--player");
     const PlayerNumber = document.querySelector(".container__points--ai");
 
@@ -40,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function(){
             listItem[0].remove();
         }
         popDownBox.popDown(gameBox);
+        setAt.removeAt(allImage);
     })
 
     btnOutcome.addEventListener("click", function(){
@@ -79,7 +82,6 @@ document.addEventListener("DOMContentLoaded", function(){
             PlayerPoints = 0;
             PlayerNumber.innerHTML = PlayerPoints;  
             Ainumber.innerHTML = AiPoints;
-/*             gameBox.style.zIndex = "-1"; */
         }
     }
 
@@ -105,14 +107,30 @@ document.addEventListener("DOMContentLoaded", function(){
        }
     }
 
+    const setAt = {
+        addAt: function(place){
+            for(const element of place){
+                element.setAttribute("disabled", "true");
+            }
+        },
+        removeAt: function(place){
+            for(const element of place){
+                element.removeAttribute("disabled", "true");
+            }
+        } 
+    }
+
+
     function gameEnd(outcomeAi, outcomePlayer){
         if(outcomeAi >= 5){
             gameDescription.innerHTML = "wygrał";
             popDownBox.popUp(gameBox);
+            setAt.addAt(allImage);
         }
         else if(outcomePlayer >= 5){
             gameDescription.innerHTML = "przegrał";
             popDownBox.popUp(gameBox);
+            setAt.addAt(allImage);
         }
         else{
             console.log("do nothing");

@@ -90,6 +90,7 @@ $orange: #f16d5e;
 .container__loseGame--comment{
     font-size: 4vh;
     text-align: center;
+    user-select: none;
 }
 
 .container__loseGame--button{
@@ -107,6 +108,7 @@ $orange: #f16d5e;
     border: 2px solid $black;
     cursor: pointer;
     transition: all 400ms ease;
+    user-select: none;
 }
 
 .container__button--outcomes a,
@@ -124,12 +126,18 @@ $orange: #f16d5e;
     transform: translateY(5px);
 }
 
-.container__image{
+
+.container__imageAll{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+}
+
+.container__image{
+    border: none;
+    background: none;
 }
 
 .container__image1 i,
@@ -145,6 +153,24 @@ $orange: #f16d5e;
 .container__image2 i:hover,
 .container__image3 i:hover{
     transform: scale(1.1);
+}
+
+.container__image1:active,
+.container__image2:active,
+.container__image3:active{
+    outline: none;
+    border: none;
+}
+
+.container__image1:focus,
+.container__image2:focus,
+.container__image3:focus{
+    outline: none;
+}
+
+.container__image--disabled{
+    opacity: 0.65; 
+    cursor: none;
 }
 
 .container__outcome{
