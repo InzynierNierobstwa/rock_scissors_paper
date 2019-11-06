@@ -39,6 +39,7 @@ $orange: #f16d5e;
 }
 
 .header__title{
+    max-width: 1080px;
     color: $black;
     text-align: center;
     vertical-align: middle;
@@ -51,6 +52,7 @@ $orange: #f16d5e;
 .header__img{
     border: none;
     background: none;
+    cursor: pointer;
 }
 
 .header__img:active{
@@ -63,6 +65,9 @@ $orange: #f16d5e;
 }
 
 .container{
+    margin: auto;
+/*     max-width: 1080px; */
+    min-height: 680px;
     background-color: $white;
     font-family: $Roboto;
     position: relative;
@@ -143,24 +148,29 @@ $orange: #f16d5e;
 
 
 .container__imageAll{
+    max-width: 1080px;
+    margin: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    padding: 12vh 0;
 }
 
 .container__image{
     border: none;
     background: none;
+    margin: 2vh;
 }
 
 .container__image1 i,
 .container__image2 i,
 .container__image3 i{
-    margin: 2vh;
+    font-size: 15vh;
     color: $black;
     cursor: pointer;
+    height: auto;
     transition: all 400ms ease;
 }
 
@@ -189,12 +199,16 @@ $orange: #f16d5e;
 }
 
 .container__outcome{
+    display: block;
+    margin: auto;
     font-size: 6vh;
 }
 
 .container__players{
+    margin: auto;
+    max-width: 650px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .container__player--player,
@@ -211,13 +225,15 @@ $orange: #f16d5e;
 }
 
 .container__points{
+    margin: auto;
+    max-width: 650px;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .container__comment{
     padding: 1vh;
-    margin: 1vh;
+    margin: 1vh 0;
     background-color: $grey;
 }
 
@@ -230,7 +246,6 @@ $orange: #f16d5e;
     display: flex;
     justify-content: space-between;
     background-color: $blue;
-/*     margin-top: 1vh; */
     height: 10vh;
 }
 
@@ -253,16 +268,43 @@ $orange: #f16d5e;
 }
 
 //nightMode
-/* #headerFooter--night{
+#headerFooter--night{
     background-color: $greyNight;
     color: $orange;
 }
 
 #container--night{
     background-color: $grey;
-    color: $white
+    color: $orange;
 }
 
 #container__image--night{
     color: $white;
-} */
+}
+
+
+//media querry
+@media (min-width: 400px){
+    .header__title{
+        font-size: 5vh;
+        padding: 2vh;
+        margin: auto;
+    }
+
+    .container__image1 i,
+    .container__image2 i,
+    .container__image3 i{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (min-width: 750px){
+    .container__image1 i,
+    .container__image2 i,
+    .container__image3 i{
+        font-size: 20vh;
+        width: 100%;
+        height: 100%;
+    }
+}
