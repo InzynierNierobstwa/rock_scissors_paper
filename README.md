@@ -5,7 +5,7 @@ Simple game app created with Vanilla JS
 * [Motivation](#motivation)
 * [General info](#general-info)
 * [Technologies](#technologies)
-* [Visualization](#setup)
+* [Visualization](#visualization)
 
 ## Motivation
 The project was designed to test my JavaScript skills (mainly DOM).
